@@ -1,5 +1,8 @@
 function sumItems(array) {
-  // Sum all the numbers in the array
+  if (typeof array === 'number') {
+    return array;
+  }
+  return array.reduce((sum, element) => sum + sumItems(element), 0);
 }
 
 module.exports = sumItems;
